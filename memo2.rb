@@ -20,10 +20,20 @@ def show_memo(memos)
     puts memo_2
 end
 
+def edit_memo
+    puts "メモの追記をして下さい"
+    edit_content = gets
+    memo_3 = File.open("memo.csv", "a")
+
+    memo_3.write(edit_content)
+    
+    memo_3.close
+end
+
 memos = []
 
 
-puts "モード選択 add or show"
+puts "モード選択 add or show or edit"
 mode = gets.chomp
 if mode == "add"
     puts "メモを追加します"
@@ -31,6 +41,9 @@ if mode == "add"
 elsif mode == "show"
     puts "メモを表示します"
     show_memo(memos)
+elsif mode == "edit"
+    puts "メモを編集（追記）します"
+    memos.push(edit_memo)
 else
     puts "エラー"
 end
