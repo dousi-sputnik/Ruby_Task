@@ -8,6 +8,7 @@ class Janken
 
         jankens = ["グー", "チョキ","パー"]
         puts "人類:#{jankens[human_choice]}, cp:#{jankens[cp_choice]}"
+        puts "_______________"
         @human_choice = human_choice
         @cp_choice = cp_choice
     end
@@ -15,13 +16,16 @@ class Janken
     def ja_now
         if @human_choice == @cp_choice
             puts "あいこです、もう一度お願いします"
+            puts "_______________"
             return 0
         elsif(@human_choice == 0 && @cp_choice == 1) || (@human_choice == 1 && @cp_choice == 2) || (@human_choice == 2 && @cp_choice == 0)
             puts "人類の勝利です"
+            puts "_______________"
             ja_game = 1
             return ja_game
         else
             puts "人類の敗北です"
+            puts "_______________"
             ja_game = 2
             return ja_game
         end
@@ -37,6 +41,7 @@ class AtiHoi
 
         atihois = ["上", "右", "下", "左"]
         puts "人類:#{atihois[human_choice1]}, cp:#{atihois[cp_choice1]}"
+        puts "_______________"
 
         @human_choice1 = human_choice1
         @cp_choice1 = cp_choice1
@@ -45,10 +50,12 @@ class AtiHoi
     def ah_now_h
         if @human_choice1 == @cp_choice1
             puts "人間様の勝利です"
+            puts "_______________"
             ja_game = 3
             return ja_game
         else
             puts "じゃんけんからやり直してください"
+            puts "_______________"
             ja_game = 0
             return ja_game
         end
@@ -56,11 +63,13 @@ class AtiHoi
 
     def ah_now_c
         if @human_choice1 == @cp_choice1
-            puts "人類の敗北です、機械に二連敗とか恥ずかしくないですかw"
+            puts "人類の敗北です、機械側の勝利です"
+            puts "_______________"
             ja_game = 3
             return ja_game
         else
             puts "じゃんけんからやり直してください"
+            puts "_______________"
             ja_game = 0
             return ja_game
         end
@@ -68,7 +77,7 @@ class AtiHoi
 
 end
 
-puts "じゃんけんの後、あっち向いてホイをお願いします。まさか人間様が機械相手に負けるはずないですよね"
+puts "じゃんけんの後、あっち向いてホイをお願いします。"
 
 janken = Janken.new
 atihoi = AtiHoi.new
@@ -97,4 +106,4 @@ if ja_game == 3
 end
 }
 
-#私は機械に勝てませんでした、ずっと馬鹿にされ続けました
+
