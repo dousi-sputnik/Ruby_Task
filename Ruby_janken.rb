@@ -2,10 +2,8 @@ class Janken
     def ja_rule
         puts "出さなきゃ負けよ、じゃんけんポイ！"
         puts "[0]グー\n[1]チョキ\n[2]パー"
-
         human_choice = gets.to_i
         cp_choice = rand(3)
-
         jankens = ["グー", "チョキ","パー"]
         puts "人類:#{jankens[human_choice]}, cp:#{jankens[cp_choice]}"
         puts "_______________"
@@ -38,11 +36,9 @@ class AtiHoi
         puts "[0]上\n[1]右\n[2]下\n[3]左"
         human_choice1 = gets.to_i
         cp_choice1 = rand(4)
-
         atihois = ["上", "右", "下", "左"]
         puts "人類:#{atihois[human_choice1]}, cp:#{atihois[cp_choice1]}"
         puts "_______________"
-
         @human_choice1 = human_choice1
         @cp_choice1 = cp_choice1
     end
@@ -74,11 +70,9 @@ class AtiHoi
             return ja_game
         end
     end
-
 end
 
 puts "じゃんけんの後、あっち向いてホイをお願いします。"
-
 janken = Janken.new
 atihoi = AtiHoi.new
 ja_game = 0
@@ -88,8 +82,6 @@ while ja_game == 0
     ja_game = janken.ja_rule
     ja_game = janken.ja_now
 end
-
-
 
 while ja_game == 1
     ja_game = atihoi.ah_rule
@@ -105,5 +97,3 @@ if ja_game == 3
     break
 end
 }
-
-
